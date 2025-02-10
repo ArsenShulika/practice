@@ -1,6 +1,6 @@
 //!!! Завдання 1: Перетворення і фільтрація
 
-const data = ["123.45", "abc", "42", "10.5", "NaN", "Infinity", "-50"];
+// const data = ["123.45", "abc", "42", "10.5", "NaN", "Infinity", "-50"];
 
 // Витягни з масиву лише ті елементи, які можна перетворити на числа (використай filter() і isNaN()).
 // Перетвори всі залишені елементи на числа (використай map() і parseFloat()).
@@ -165,7 +165,7 @@ const data = ["123.45", "abc", "42", "10.5", "NaN", "Infinity", "-50"];
 
 //? Завдання 10: Функція калькулятор
 
-const expression = "10 + 20 - 5 * 2 / 2";
+// const expression = "10 + 20 - 5 * 2 / 2";
 
 // function divideString(expression) {
 //   const arr = expression.split(" ");
@@ -210,3 +210,26 @@ const expression = "10 + 20 - 5 * 2 / 2";
 // Розбий рядок на масив чисел і операторів (використай split()).
 // Виконай усі математичні операції у правильному порядку (додай, відніми, помнож і поділи числа).
 // Виведи результат обчислення.
+
+//? Напишіть скрипт, який для обєкту user,
+//?     послідовно:
+
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tennis",
+//   premiun: true,
+// };
+// // 1. додасть поле mood зі значенням 'happy';
+
+// function modifyObject(user) {
+//   user.mood = "happy";
+//   user.hobby = "skydiving";
+//   user.premiun = false;
+//   const keys = Object.keys(user);
+//   for (const key of keys) {
+//     console.log(`${key}: ${user[key]}`);
+//   }
+// }
+
+// console.log(modifyObject(user));
