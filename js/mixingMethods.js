@@ -1,6 +1,6 @@
 //!!! Завдання 1: Перетворення і фільтрація
 
-// const data = ["123.45", "abc", "42", "10.5", "NaN", "Infinity", "-50"];
+const data = ["123.45", "abc", "42", "10.5", "NaN", "Infinity", "-50"];
 
 // Витягни з масиву лише ті елементи, які можна перетворити на числа (використай filter() і isNaN()).
 // Перетвори всі залишені елементи на числа (використай map() і parseFloat()).
@@ -24,7 +24,7 @@
 //   console.log(
 //     dateStr
 //       .split("-")
-//       .map((item) => parseInt(item, 10))
+//       .map((item) => String(parseInt(item)).padStart(2, "0"))
 //       .join(".")
 //   );
 //   console.log(dateStr.replaceAll("-", "."));
@@ -136,7 +136,7 @@
 //   );
 //   const sortedArr = firstLetter
 //     .toSorted((a, b) => a.localeCompare(b))
-//     .join(",");
+//     .join(", ");
 //   console.log(sortedArr);
 // }
 
@@ -177,35 +177,35 @@ const expression = "10 + 20 - 5 * 2 / 2";
 
 // console.log(divideString(expression));
 
-function calculate(expression) {
-  const arr = expression.split(" "); // Розділяємо вираз на масив
+// function calculate(expression) {
+//   const arr = expression.split(" "); // Розділяємо вираз на масив
 
-  // Спочатку обробляємо множення та ділення
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "*") {
-      arr.splice(i - 1, 3, Number(arr[i - 1]) * Number(arr[i + 1]));
-      i--; // Повертаємось на 1 крок назад, щоб перевірити новий результат
-    } else if (arr[i] === "/") {
-      arr.splice(i - 1, 3, Number(arr[i - 1]) / Number(arr[i + 1]));
-      i--; // Повертаємось на 1 крок назад
-    }
-  }
+//   // Спочатку обробляємо множення та ділення
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === "*") {
+//       arr.splice(i - 1, 3, Number(arr[i - 1]) * Number(arr[i + 1]));
+//       i--; // Повертаємось на 1 крок назад, щоб перевірити новий результат
+//     } else if (arr[i] === "/") {
+//       arr.splice(i - 1, 3, Number(arr[i - 1]) / Number(arr[i + 1]));
+//       i--; // Повертаємось на 1 крок назад
+//     }
+//   }
 
-  // Тепер обробляємо додавання та віднімання
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "+") {
-      arr.splice(i - 1, 3, Number(arr[i - 1]) + Number(arr[i + 1]));
-      i--;
-    } else if (arr[i] === "-") {
-      arr.splice(i - 1, 3, Number(arr[i - 1]) - Number(arr[i + 1]));
-      i--;
-    }
-  }
+//   // Тепер обробляємо додавання та віднімання
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === "+") {
+//       arr.splice(i - 1, 3, Number(arr[i - 1]) + Number(arr[i + 1]));
+//       i--;
+//     } else if (arr[i] === "-") {
+//       arr.splice(i - 1, 3, Number(arr[i - 1]) - Number(arr[i + 1]));
+//       i--;
+//     }
+//   }
 
-  return arr[0]; // Повертаємо результат
-}
+//   return arr[0]; // Повертаємо результат
+// }
 
-console.log(calculate(expression)); // Результат: 25
+// console.log(calculate(expression)); // Результат: 25
 
 // Розбий рядок на масив чисел і операторів (використай split()).
 // Виконай усі математичні операції у правильному порядку (додай, відніми, помнож і поділи числа).

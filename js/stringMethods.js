@@ -203,14 +203,14 @@
 //? Зроби так, щоб кожне слово починалося з великої літери (["Html", "Css", "Javascript", "React"]).
 //? З'єднай слова назад у рядок через кому.
 
-// const keywords = "html,css,javascript,react";
+const keywords = "html,css,javascript,react";
 
-// function firstLetterCase(str) {
-//   return str
-//     .trim()
-//     .split(",")
-//     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-//     .join(", ");
-// }
+function firstLetterCase(str) {
+  return str
+    .trim()
+    .split(",")
+    .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
+    .join(", ");
+}
 
-// console.log(firstLetterCase(keywords));
+console.log(firstLetterCase(keywords));

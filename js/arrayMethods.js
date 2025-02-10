@@ -346,10 +346,10 @@
 //   items.forEach((item) => {
 //     if (!grouped[item.color]) {
 //       grouped[item.color] = [];
+//     } else {
+//       grouped[item.color].push(item);
 //     }
-//     grouped[item.color].push(item);
 //   });
-//   console.log(grouped);
 //   return grouped;
 // }
 // console.log(groupByColor(items));
@@ -361,7 +361,31 @@
 //? Завдання 5: Підрахунок кількості елементів
 // Опис: Напиши функцію, яка підраховує кількість кожного унікального елемента в масиві.
 
+// const obj = {};
+
+// const item = "Name";
+
+// obj[item] = [];
+// obj[item].push("igor");
+// obj[item].push("ira");
+
+// console.log(obj);
+
 // const items = [1, 3, 4, 3, 4, 4, 5, 4];
+
+// function countOccurrences(items) {
+//   let count = {};
+//   items.forEach((item) => {
+//     if (count[item]) {
+//       count[item] += 1;
+//     } else {
+//       count[item] = 1;
+//     }
+//   });
+//   return count;
+// }
+
+// console.log(countOccurrences(items));
 
 //? МЕТОД 1;
 // function countOccurrences(items) {
