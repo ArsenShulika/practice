@@ -1,3 +1,540 @@
+//!!!!!!!!!!!!!!!!!!!!!!!!! JUNIOR + !!!!
+
+// const products = [
+//   { name: "Laptop", category: "Electronics" },
+//   { name: "Shirt", category: "Clothing" },
+//   { name: "Phone", category: "Electronics" },
+//   { name: "Pants", category: "Clothing" },
+//   { name: "Tablet", category: "Electronics" },
+// ];
+
+// function getProducts(products) {
+//   return products.reduce((acc, product) => {
+//     if (product.category === "Electronics") {
+//       acc["Electronics"] = acc["Electronics"] || [];
+//       acc["Electronics"].push(product);
+//     } else if (product.category === "Clothing") {
+//       acc["Clothing"] = acc["Clothing"] || [];
+//       acc["Clothing"].push(product);
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(getProducts(products));
+
+// const students = [
+//   { name: "Alice", grade: "A" },
+//   { name: "Bob", grade: "B" },
+//   { name: "Charlie", grade: "A" },
+//   { name: "Dave", grade: "C" },
+//   { name: "Eve", grade: "B" },
+// ];
+
+// function getProducts(students) {
+//   return students.reduce((acc, student) => {
+//     if (student.grade === "A") {
+//       acc["A"] = acc["A"] || [];
+//       acc["A"].push(student);
+//     } else if (student.grade === "B") {
+//       acc["B"] = acc["B"] || [];
+//       acc["B"].push(student);
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(getProducts(students));
+
+// const cities = [
+//   { name: "New York", country: "USA" },
+//   { name: "Los Angeles", country: "USA" },
+//   { name: "Berlin", country: "Germany" },
+//   { name: "Munich", country: "Germany" },
+//   { name: "Tokyo", country: "Japan" },
+// ];
+
+// function getGroupe(cities) {
+//   return cities.reduce((acc, city) => {
+//     if (city.country === "USA") {
+//       acc["USA"] = acc["USA"] || [];
+//       acc["USA"].push(city);
+//     } else if (city.country === "Germany") {
+//       acc["Germany"] = acc["Germany"] || [];
+//       acc["Germany"].push(city);
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(getGroupe(cities));
+
+// const people = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 40 },
+//   { name: "Charlie", age: 35 },
+//   { name: "David", age: 29 },
+//   { name: "Eve", age: 33 },
+// ];
+
+// function getAverageAge(people) {
+//   const peopleOver = people.filter((person) => person.age > 30);
+//   return (
+//     peopleOver.reduce((acc, person) => {
+//       acc += person.age;
+//       return acc;
+//     }, 0) / peopleOver.length
+//   );
+// }
+
+// console.log(getAverageAge(people));
+
+// const products = [
+//   { name: "TV", category: "Electronics", price: 500 },
+//   { name: "Headphones", category: "Electronics", price: 80 },
+//   { name: "Blender", category: "Home", price: 150 },
+//   { name: "Sofa", category: "Furniture", price: 700 },
+//   { name: "Table", category: "Furniture", price: 90 },
+//   { name: "Laptop", category: "Electronics", price: 1200 },
+// ];
+
+// function getNewObj(products) {
+//   return products
+//     .filter((product) => product.price > 100)
+//     .reduce((acc, product) => {
+//       if (!acc[product.category]) {
+//         acc[product.category] = product.price;
+//       } else {
+//         acc[product.category] += product.price;
+//       }
+//       return acc;
+//     }, {});
+// }
+
+// console.log(getNewObj(products));
+
+const employees = [
+  { name: "Alice", department: "IT", salary: 5000 },
+  { name: "Bob", department: "HR", salary: 2500 },
+  { name: "Charlie", department: "IT", salary: 7000 },
+  { name: "David", department: "Marketing", salary: 3200 },
+  { name: "Emma", department: "Marketing", salary: 2900 },
+  { name: "Frank", department: "IT", salary: 4000 },
+];
+
+function getTotalSalary(employees) {
+  return employees
+    .filter((employee) => employee.salary > 3000)
+    .reduce((acc, employee) => {
+      if (!acc[employee.department]) {
+        acc[employee.department] = employee.salary;
+      } else {
+        acc[employee.department] += employee.salary;
+      }
+      return acc;
+    }, {});
+}
+
+console.log(getTotalSalary(employees));
+
+// function getTotalSalary(employees) {
+//   return employees
+//     .filter((employee) => employee.salary > 3000)
+//     .map((employee) => ({
+//       name: employee.name,
+//       department: employee.department,
+//     }));
+// }
+
+// console.log(getTotalSalary(employees));
+
+// const products = [
+//   { name: "TV", category: "Electronics", price: 500 },
+//   { name: "Blender", category: "Home", price: 150 },
+//   { name: "Laptop", category: "Electronics", price: 1200 },
+//   { name: "Sofa", category: "Furniture", price: 700 },
+//   { name: "Shirt", category: "Clothing", price: 50 },
+// ];
+
+// function groupByCategory(products) {
+//   return products.reduce((acc, product) => {
+//     if (!acc[product.category]) {
+//       acc[product.category] = [];
+//       acc[product.category].push(product);
+//     } else {
+//       acc[product.category].push(product);
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupByCategory(products));
+
+// const orders = [
+//   { id: 1, status: "pending", amount: 100 },
+//   { id: 2, status: "shipped", amount: 200 },
+//   { id: 3, status: "delivered", amount: 150 },
+//   { id: 4, status: "pending", amount: 50 },
+//   { id: 5, status: "shipped", amount: 300 },
+// ];
+
+// function groupByStatus(orders) {
+//   return orders.reduce((acc, order) => {
+//     if (!acc[order.status]) {
+//       acc[order.status] = acc[order.status] || [];
+//       acc[order.status].push(order);
+//     } else {
+//       acc[order.status].push(order);
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupByStatus(orders));
+
+const text = "JavaScript is great and JavaScript is fun";
+
+function countWords(text) {
+  return text
+    .toLowerCase()
+    .split(" ")
+    .reduce((acc, word) => {
+      acc[word] = (acc[word] || 0) + 1;
+      return acc;
+    }, {});
+}
+
+console.log(countWords(text));
+
+// const text = "Hello World";
+
+// function countLetters(text) {
+//   return text
+//     .toLowerCase()
+//     .split("")
+//     .reduce((acc, char) => {
+//       if (char !== " ") {
+//         if (acc[char]) {
+//           acc[char] += 1;
+//         } else {
+//           acc[char] = 1;
+//         }
+//       }
+//       return acc;
+//     }, {});
+// }
+
+// console.log(countLetters(text));
+
+// const users = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 32 },
+//   { name: "Charlie", age: 29 },
+//   { name: "Dave", age: 40 },
+//   { name: "Eve", age: 23 },
+// ];
+
+// function groupUsersByAge(users) {
+//   return users.reduce((acc, user) => {
+//     if (user.age >= 20 && user.age <= 30) {
+//       acc["20-30"] = acc["20-30"] || [];
+//       acc["20-30"].push(user);
+//     } else if (user.age > 31 && user.age <= 40) {
+//       acc["31-40"] = acc["31-40"] || [];
+//       acc["31-40"].push(user);
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// console.log(groupUsersByAge(users));
+
+// const employees = [
+//   { name: "John", salary: 1500 },
+//   { name: "Anna", salary: 2500 },
+//   { name: "Mike", salary: 3200 },
+//   { name: "Laura", salary: 2700 },
+//   { name: "Steve", salary: 1800 },
+// ];
+
+// function groupEmployeeBySalaries(employees) {
+//   return employees.reduce((acc, employee) => {
+//     if (employee.salary >= 1000 && employee.salary <= 2000) {
+//       acc["1000 - 2000"] = acc["1000 - 2000"] || [];
+//       acc["1000 - 2000"].push(employee);
+//     } else if (employee.salary >= 2001 && employee.salary <= 3000) {
+//       acc["2001 - 3000"] = acc["2001 - 3000"] || [];
+//       acc["2001 - 3000"].push(employee);
+//     } else if (employee.salary >= 3001) {
+//       acc["3001"] = acc["3001"] || [];
+//       acc["3001"].push(employee);
+//     }
+//     return acc;
+//   }, {});
+// }
+
+// const articles = [
+//   { title: "HTML Basics", tags: ["HTML", "CSS", "Web"] },
+//   { title: "CSS Flexbox", tags: ["CSS", "Flexbox", "Web"] },
+//   { title: "JavaScript Arrays", tags: ["JavaScript", "Arrays", "Web"] },
+//   { title: "React Hooks", tags: ["React", "Hooks", "JavaScript"] },
+//   { title: "Git Basics", tags: ["Git", "Version Control", "Web"] },
+// ];
+
+// function getUniqueTags(articles) {
+//   return articles
+//     .flatMap((article) => article.tags)
+//     .filter((item, index, arr) => arr.indexOf(item) === index);
+// }
+
+// console.log(getUniqueTags(articles));
+
+// console.log(groupEmployeeBySalaries(employees));
+
+// const products = [
+//   { name: "Laptop", category: "Electronics", price: 1200 },
+//   { name: "Phone", category: "Electronics", price: 800 },
+//   { name: "Shirt", category: "Clothing", price: 30 },
+//   { name: "Shoes", category: "Clothing", price: 200 },
+//   { name: "Fridge", category: "Home", price: 101 },
+//   { name: "Washing Machine", category: "Home", price: 300 },
+// ];
+
+// function getQuantityOfProducts(products) {
+//   return products
+//     .filter((product) => product.price > 100)
+//     .reduce((acc, product) => {
+//       if (acc[product.category]) {
+//         acc[product.category] += 1;
+//       } else {
+//         acc[product.category] = 1;
+//       }
+
+//       return acc;
+//     }, {});
+// }
+
+// function getQuantityOfProducts(products) {
+//   return products
+//     .filter((product) => product.price > 100)
+//     .reduce((acc, product) => {
+//       acc[product.category] = (acc[product.category] || 0) + 1;
+//       return acc;
+//     }, {});
+// }
+
+// console.log(getQuantityOfProducts(products));
+
+// const products = [
+//   { name: "Laptop", category: "Electronics", price: 1200 },
+//   { name: "Phone", category: "Electronics", price: 800 },
+//   { name: "Shirt", category: "Clothing", price: 30 },
+//   { name: "Shoes", category: "Clothing", price: 50 },
+//   { name: "Fridge", category: "Home", price: 400 },
+//   { name: "Washing Machine", category: "Home", price: 300 },
+// ];
+
+// function getProducts(products) {
+//   const product = products
+//     .filter((product) => product.name.includes("Sh"))
+//     .reduce((acc, product) => {
+//       acc.push(product.name);
+//       return acc;
+//     }, []);
+
+//   return product;
+// }
+
+// console.log(getProducts(products));
+
+// const orders = [
+//   {
+//     orderId: 1,
+//     items: [
+//       { name: "Laptop", price: 1200 },
+//       { name: "Phone", price: 800 },
+//     ],
+//   },
+//   { orderId: 2, items: [{ name: "Shoes", price: 50 }] },
+//   {
+//     orderId: 3,
+//     items: [
+//       { name: "Shirt", price: 30 },
+//       { name: "Washing Machine", price: 400 },
+//     ],
+//   },
+// ];
+
+// function getNewObj(orders) {
+//   return orders
+//     .flatMap((order) => order.items)
+//     .map((item) => ({ name: item.name, price: item.price }));
+// }
+
+// console.log(getNewObj(orders));
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! JUNIOR !!!!!!!!!!!!!!!!!!!!
+
+// // const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// // console.log(numbers.filter((num) => num % 2 === 0));
+// // console.log(numbers.reduce((acc, num) => (acc += num), 0));
+// const users = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 30 },
+//   { name: "Charlie", age: 35 },
+// ];
+
+// console.log(users.map((user) => user.name));
+// console.log(users.filter((user) => user.age > 25));
+// console.log(users.reduce((acc, user) => (acc += user.age), 0) / users.length);
+
+// const categories = [
+//   ["Electronics", "Computers"],
+//   ["Clothing", "Shoes"],
+//   ["Home", "Kitchen"],
+// ];
+
+// console.log(categories.flatMap((category) => category));
+
+// const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+// function getNumberOfEl(fruits) {
+//   // return fruits.reduce((acc, fruit) => {
+//   //   if (!acc[fruit]) {
+//   //     acc[fruit] = 1;
+//   //   } else {
+//   //     acc[fruit] += 1;
+//   //   }
+//   //   return acc;
+//   // }, {});
+
+//   const obj = {};
+//   fruits.forEach((fruit) => {
+//     obj[fruit] = (obj[fruit] || 0) + 1;
+//   });
+//   return obj;
+// }
+// console.log(getNumberOfEl(fruits));
+
+// // const numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+
+// function countOccurrences(numbers) {
+//   return numbers.reduce((acc, num) => {
+//     acc[num] = (acc[num] || 0) + 1;
+//     return acc;
+//   }, {});
+// }
+// // console.log(countOccurrences(numbers));
+
+// const text = "aabbbcc123!";
+
+// function countCharacters(text) {
+//   return text.split("").reduce((acc, char) => {
+//     acc[char] = (acc[char] || 0) + 1;
+//     return acc;
+//   }, {});
+// }
+// console.log(countCharacters(text));
+
+// const items = [
+//   { category: "fruit" },
+//   { category: "vegetable" },
+//   { category: "fruit" },
+//   { category: "meat" },
+//   { category: "vegetable" },
+//   { category: "fruit" },
+// ];
+
+// // function countCategories(items) {
+// //   return items.reduce((acc, item) => {
+// //     acc[item.category] = (acc[item.category] || 0) + 1;
+// //     return acc;
+// //   }, {});
+// // }
+
+// function countCategories(items) {
+//   const obj = {};
+//   items.forEach((item) => {
+//     obj[item.category] = (obj[item.category] || 0) + 1;
+//   });
+//   return obj;
+// }
+
+// console.log(countCategories(items));
+
+// // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// function countEvenAndOdd(numbers) {
+//   return numbers.reduce(
+//     (acc, num) => {
+//       if (num % 2 === 0) {
+//         acc.even += 1;
+//       } else {
+//         acc.odd += 1;
+//       }
+//       return acc;
+//     },
+//     { even: 0, odd: 0 }
+//   );
+// }
+
+// // console.log(countEvenAndOdd(numbers));
+
+// const words = ["hello", "world", "javascript"];
+
+// function countCharactersInArray(words) {
+//   return words
+//     .join("")
+//     .split("")
+//     .reduce((acc, char) => {
+//       acc[char] = (acc[char] || 0) + 1;
+//       return acc;
+//     }, {});
+// }
+
+// console.log(countCharactersInArray(words));
+
+// // const people = [
+// //   { name: "John", age: 25 },
+// //   { name: "Sarah", age: 40 },
+// //   { name: "Michael", age: 55 },
+// //   { name: "Emma", age: 28 },
+// //   { name: "James", age: 35 },
+// // ];
+
+// // function countAgeGroups(people) {
+// //   people.filter;
+// // }
+
+// // console.log(countAgeGroups(people));
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// numbers.forEach((numb) => console.log(numb));
+
+// const products = [
+//   { name: "Laptop", price: 1000 },
+//   { name: "Phone", price: 500 },
+//   { name: "Tablet", price: 800 },
+// ];
+
+// console.log(products.toSorted((a, b) => b.price - a.price));
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// console.log(numbers.map((num) => num * num));
+// str = "This is an example!";
+
+// function reverseWords(str) {
+//   return str
+//     .split(" ")
+//     .map((word) => word.split("").reverse().join(""))
+//     .join(" ");
+// }
+
+// console.log(reverseWords(str));
+
 //! Завдання 1: map
 
 // Створи новий масив, у якому кожне число буде подвоєно.

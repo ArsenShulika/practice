@@ -233,3 +233,102 @@
 // }
 
 // console.log(modifyObject(user));
+
+// function createCounter(num) {
+//   let sum = num;
+//   let obj = {
+//     addIncr: () => {
+//       return (sum += 1);
+//     },
+
+//     addDecr: () => {
+//       return (sum -= 1);
+//     },
+
+//     show() {
+//       setTimeout(() => {
+//         console.log(sum);
+//       }, 1000);
+//     },
+//   };
+//   return obj;
+// }
+
+// const counter = createCounter(10);
+
+// counter.addIncr();
+// counter.addDecr();
+// counter.show();
+
+// console.log();
+
+// class Test {
+//   constructor() {
+//     this.a = 777;
+//   }
+
+//   say() {
+//     console.log(10);
+//   }
+// }
+
+// const res = new Test();
+
+// console.log(res);
+// res.say();
+
+// function Test2() {
+//   this.a = 777;
+//   this.say = function () {
+//     console.log(10);
+//   };
+// }
+// let res2 = Test2;
+// console.log(res2);
+// res2.say();
+
+// function firstUniqueChar(str) {
+//   const res = {};
+
+//   for (let item of str) {
+//     res[item] = (res[item] || 0) + 1;
+//   }
+//   for (let item of str) {
+//     if (res[item] === 1) {
+//       return item;
+//     }
+//   }
+//   return null;
+// }
+
+// console.log(firstUniqueChar("abbbb"));
+// console.log(firstUniqueChar("leetcode"));
+
+function findMin(...arguments) {
+  // Якщо аргументів немає, повертаємо null
+  let min = arguments[0];
+  for (let i = 1; i < arguments.length; i++) {
+    if (typeof arguments[i] === "number" && arguments[i] < min) {
+      min = arguments[i];
+    }
+    if (arguments.length === 0) return null;
+  }
+  return min;
+}
+
+console.log(findMin(5, 1, 7, -3, 9)); // -3
+console.log(findMin(10, 20, 30)); // 10
+console.log(findMin()); // null
+
+function containsArgument(target) {
+  for (let i = 1; i < arguments.length; i++) {
+    if (arguments[i] === target) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(containsArgument(3, 1, 2, 3, 4)); // true
+console.log(containsArgument("a", "b", "c", "d")); // false
+console.log(containsArgument(5)); // false
